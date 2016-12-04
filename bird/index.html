@@ -246,7 +246,7 @@ var Game = function () {
 	this.entry = function () {
 		bird.dy = 0;
 		//********
-		VK.api('storage.set',{user_id: user.id, key: 'score',value: user.score }, function(data));
+		VK.api('storage.set',{user_id: user.id, key: 'score',value: user.score }, function(data) { log('Success'); } );
 		//********
     	 blocks = [], oldBlock = false;
 		OOP.forInt(5, function () {
