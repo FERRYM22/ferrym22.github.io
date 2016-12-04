@@ -294,10 +294,6 @@ game.newLoop('GameOver', function () {
 	});
 
 	pushVK.draw();
-	//********
-			VK.api('storage.get',{user_id: user.id, key: 'score'}, function(data) { var rec = data.response;} );
-			//***********
-	
 	restart.draw();
 
 	if (mouse.isPeekObject('LEFT', restart)) {
