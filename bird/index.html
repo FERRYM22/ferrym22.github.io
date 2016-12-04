@@ -245,6 +245,9 @@ var Game = function () {
 
 	this.entry = function () {
 		bird.dy = 0;
+		//********
+		VK.api('storage.set',{user_id: user.id, key: 'score',value: user.score }, function(data));
+		//********
     	 blocks = [], oldBlock = false;
 		OOP.forInt(5, function () {
 		addBlock(pjs.math.random(space*2, height-space*2));
