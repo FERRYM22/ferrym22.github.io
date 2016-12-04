@@ -285,7 +285,7 @@ game.newLoop('GameOver', function () {
 	brush.drawText({
 		x : width / 2,
 		y : height / 20,
-		text : 'Ваш результат  ' + score + ' ! ',
+		text : 'Ваш результат  ' + score + ' ! ' +user.record ? user.record : 'No record',
 		size : 50,
 		color : 'white',
 		font : 'myFont',
