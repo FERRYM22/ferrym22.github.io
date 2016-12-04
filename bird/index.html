@@ -25,14 +25,6 @@ VK.init(function() {
 }, function() {
 
 }, '5.60');
-
-	
-	
-	
-VK.api('storage.get',{user_id: user.id, key: 'score'}, function(data) { user.record = data.response;} );
-	
-	
-	
 	
 var width = 640, height = 480;
 
@@ -129,7 +121,7 @@ var Menu = function () {
 		brush.drawText({
 			x : width / 2,
 			y : height / 3,
-			text : 'FlappyBird',
+			text : 'FlappyBird'+'\n Record: ',
 			size : 50,
 			color : 'white',
 			font : 'myFont',
@@ -137,6 +129,9 @@ var Menu = function () {
 		});
 
 		if (mouse.isPress('LEFT')) {
+			//********
+			VK.api('storage.get',{user_id: user.id, key: 'score'}, function(data) { user.record = data.response;} );
+			//***********
 			return game.setLoop('game');
 		}
 	};
