@@ -26,6 +26,14 @@ VK.init(function() {
 
 }, '5.60');
 
+	
+	
+	
+VK.api('storage.get',{user_id: user.id, key: 'score'}, function(data) { user.record = data.response;} );
+	
+	
+	
+	
 var width = 640, height = 480;
 
 var pjs = new PointJS('2D', width, height);
