@@ -121,7 +121,7 @@ var Menu = function () {
 		brush.drawText({
 			x : width / 2,
 			y : height / 3,
-			text : 'FlappyBird'+'\n Record: ',
+			text : 'FlappyBird',
 			size : 50,
 			color : 'white',
 			font : 'myFont',
@@ -129,9 +129,7 @@ var Menu = function () {
 		});
 
 		if (mouse.isPress('LEFT')) {
-			//********
-			VK.api('storage.get',{user_id: user.id, key: 'score'}, function(data) { user.record = data.response;} );
-			//***********
+			
 			return game.setLoop('game');
 		}
 	};
@@ -296,6 +294,10 @@ game.newLoop('GameOver', function () {
 	});
 
 	pushVK.draw();
+	//********
+			VK.api('storage.get',{user_id: user.id, key: 'score'}, function(data) { var rec = data.response;} );
+			//***********
+	
 	restart.draw();
 
 	if (mouse.isPeekObject('LEFT', restart)) {
