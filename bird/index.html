@@ -159,10 +159,10 @@ var space = 80;
 			w : width / 10,
 			angle : 180,
 			onload : function () {
-				this.y = -this.h + y - space;
+				this.y =  y - space;
 			}
 		});
-
+//-this.h +
 		var o2 = game.newImageObject({
 			file : 'block.png',
 			x : dX, y : 0,
@@ -255,7 +255,7 @@ var space = 80;
 	this.entry = function () {
 		 bird.dy = 0;
     	 blocks = [], oldBlock = false;
-    	 space = 80;
+
 		OOP.forInt(5, function () {
 		addBlock(pjs.math.random(space*2, height-space*2));
 	});
