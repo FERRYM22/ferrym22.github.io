@@ -25,7 +25,7 @@ VK.init(function() {
 }, function() {
 
 }, '5.60');
-	
+
 var width = 640, height = 480;
 
 var pjs = new PointJS('2D', width, height);
@@ -128,8 +128,17 @@ var Menu = function () {
 			align : 'center'
 		});
 
+		brush.drawText({
+			x : width / 2,
+			y : height / 4,
+			text : 'Отладка',
+			size : 30,
+			color : 'white',
+			font : 'myFont',
+			align : 'center'
+		});
+
 		if (mouse.isPress('LEFT')) {
-			
 			return game.setLoop('game');
 		}
 	};
@@ -202,9 +211,6 @@ var Game = function () {
 
 
 			if (bird.y < 0) {
-				//********
-		        	//VK.api('storage.set',{user_id: user.id, key: 'score',value: user.score }, function(data) { log('Success'); } );
-				//********
 				gameOver();
 			}
 
@@ -249,7 +255,6 @@ var Game = function () {
 
 	this.entry = function () {
 		bird.dy = 0;
-		
     	 blocks = [], oldBlock = false;
 		OOP.forInt(5, function () {
 		addBlock(pjs.math.random(space*2, height-space*2));
@@ -286,7 +291,7 @@ game.newLoop('GameOver', function () {
 	brush.drawText({
 		x : width / 2,
 		y : height / 20,
-		text : 'Ваш результат  ' + score + ' ! ',
+		text : 'Ваш результат  ' + score,
 		size : 50,
 		color : 'white',
 		font : 'myFont',
@@ -303,7 +308,7 @@ game.newLoop('GameOver', function () {
 	if (mouse.isPeekObject('LEFT', pushVK)) {
 		VK.api('wall.post', {
 
-			'message' : 'В приложении FlappyBird я набрал очков: ' + score + '\n Попробуй и ты : https://vk.com/app5760810_12080137',
+			'message' : 'В приложении я набрал очков: ' + score + '\n Попробуй и ты!',
 			'attachments' : 'photo-44840923_456239018'
 
 		}, function (data) {
