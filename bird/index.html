@@ -143,10 +143,10 @@ var Menu = function () {
 		}
 	};
 };
-var blocks = [], oldBlock = false;
-	var space = 80;
-var Game = function () {
 
+var Game = function () {
+var blocks = [], oldBlock = false;
+var space = 80;
 	
 
 	var addBlock = function (y) {
@@ -259,7 +259,7 @@ var Game = function () {
 		addBlock(pjs.math.random(space*2, height-space*2));
 	});
 		bird.setPositionC(p(width / 2, height / 2));
-		score = 0;
+		score = 10;
 	};
 };
 
