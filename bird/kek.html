@@ -33,6 +33,11 @@ var p = pjs.vector.point;
 var s = pjs.vector.size;
 var brush = pjs.brush;
 var mouse = pjs.mouseControl.initMouseControl();
+	
+	
+	
+	
+	
 var score = 0;
 var bg = [], oldB;
 OOP.forInt(3, function (i) {
@@ -180,6 +185,7 @@ var Game = function () {
 		bird.angle = bird.dy;
 		if (mouse.isPress('LEFT')) {
 			bird.dy = -8;
+			bump : audio.newAudio('wing.wav', 0.5) // file, volume
 		}
 		drawBlocks();
 		drawGR();
