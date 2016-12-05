@@ -17,14 +17,20 @@
 <script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
 <script type="text/javascript" src="point.js"></script>
 <script type="text/javascript">
+
 var vk_inited = false;
+
 VK.init(function() {
 	vk_inited = true;
 }, function() {
+
 }, '5.60');
+
 var width = 640, height = 480;
+
 var pjs = new PointJS('2D', width, height);
 pjs.system.initFullScale();
+
 var log = pjs.system.log;
 var game = pjs.game;
 var OOP = pjs.OOP;
@@ -32,7 +38,9 @@ var p = pjs.vector.point;
 var s = pjs.vector.size;
 var brush = pjs.brush;
 var mouse = pjs.mouseControl.initMouseControl();
+
 var score = 0;
+
 var bg = [], oldB;
 OOP.forInt(3, function (i) {
 	oldB = game.newImageObject({
@@ -44,16 +52,21 @@ OOP.forInt(3, function (i) {
 	});
 	bg.push(oldB);
 });
+
 var drawBG = function () {
 	OOP.forArr(bg, function (el) {
 		el.draw();
+
 		el.move(p(-1, 0));
+
 		if (el.x + el.w < 0) {
 			el.x = oldB.x + oldB.w - 3;
 			oldB = el;
 		}
+
 	});
 };
+
 var gr = [], oldG;
 OOP.forInt(25, function (i) {
 	oldG = game.newImageObject({
@@ -66,16 +79,21 @@ OOP.forInt(25, function (i) {
 	});
 	gr.push(oldG);
 });
+
 var drawGR = function () {
 	OOP.forArr(gr, function (el) {
 		el.draw();
+
 		el.move(p(-1.5, 0));
+
 		if (el.x + el.w < 0) {
 			el.x = oldG.x + oldG.w - 3;
 			oldG = el;
 		}
+
 	});
 };
+
 var bird = game.newAnimationObject({
 	w : 34, h : 24,
 	positionC : p(width / 2, height / 2),
@@ -86,16 +104,20 @@ var bird = game.newAnimationObject({
 		dy : 0
 	}
 });
+
 bird.setBox({
 	offset : p(10, 5),
 	size : s(-20, -10)
 });
+
 var Menu = function () {
+
 	this.update = function () {
 		drawBG();
 		bird.draw();
 		//bird.drawStaticBox();
 		drawGR();
+
 		brush.drawText({
 			x : width / 2,
 			y : height / 3,
@@ -105,16 +127,22 @@ var Menu = function () {
 			font : 'myFont',
 			align : 'center'
 		});
+
 		if (mouse.isPress('LEFT')) {
 			return game.setLoop('game');
 		}
 	};
 };
+
 var Game = function () {
+
 	var blocks = [], oldBlock = false;
 	var space = 80;
+
 	var addBlock = function (y) {
+
 		var dX = oldBlock ? oldBlock.top.x + pjs.math.random(200, 900) : width;
+
 		var o = game.newImageObject({
 			file : 'block.png',
 			x : dX, y : 0,
@@ -124,6 +152,7 @@ var Game = function () {
 				this.y = -this.h + y - space;
 			}
 		});
+
 		var o2 = game.newImageObject({
 			file : 'block.png',
 			x : dX, y : 0,
@@ -132,56 +161,73 @@ var Game = function () {
 				this.y = y + space;
 			}
 		});
+
 		var obj = {
 			'top' : o,
 			'bottom' : o2
 		}
+
 		oldBlock = obj;
 		blocks.push(obj);
 	};
+
 	var drawBlocks = function () {
 		OOP.forArr(blocks, function (el) {
 			el.top.draw();
 			el.bottom.draw();
+
 			el.top.move(p(-1.5, 0));
 			el.bottom.move(p(-1.5, 0));
+
 			if (el.top.x + el.top.w < 0) {
 				el.top.x = el.bottom.x = oldBlock.top.x + oldBlock.top.w + pjs.math.random(200, 900);
 				oldBlock = el;
 				score += 1;
 			}
+
 			if (el.top.isInCamera()) {
 				if (el.top.isIntersect(bird)) {
 					gameOver();
 				}
 			}
+
 			if (el.bottom.isInCamera()) {
 				if (el.bottom.isIntersect(bird)) {
 					gameOver();
 				}
 			}
+
 			if (bird.y < 0) {
 				gameOver();
 			}
+
 			if (bird.y + bird.h > height) {
 				gameOver();
 			}
+
 		});
 	};
+
 	var gameOver = function () {
 		game.setLoop('GameOver');
 	};
+
 	this.update = function () {
 		drawBG();
+
 		bird.draw();
 		bird.dy += 0.5;
 		bird.y += bird.dy;
 		bird.angle = bird.dy;
+
 		if (mouse.isPress('LEFT')) {
 			bird.dy = -8;
 		}
+
 		drawBlocks();
+
 		drawGR();
+
 		brush.drawText({
 			x : width / 2,
 			y : height / 20,
@@ -191,19 +237,28 @@ var Game = function () {
 			font : 'myFont',
 			align : 'center'
 		});
+
 	};
+
 	this.entry = function () {
+
 		bird.dy = 0;
+
 		blocks = [], oldBlock = false;
+
 		OOP.forInt(5, function () {
 			addBlock(pjs.math.random(space*2, height-space*2));
 		});
+
+
 		bird.setPositionC(p(width / 2, height / 2));
 		score = 0;
 	};
 };
+
 game.newLoopFromClassObject('menu', new Menu());
 game.newLoopFromClassObject('game', new Game());
+
 var pushVK = game.newTextObject({
 	text : 'Publish to VK',
 	positionC : p(width/2, height/2),
@@ -211,6 +266,7 @@ var pushVK = game.newTextObject({
 	size : 30,
 	color : '#254364'
 });
+
 var restart = game.newTextObject({
 	text : 'Restart',
 	positionC : p(width/2, height/3),
@@ -218,10 +274,12 @@ var restart = game.newTextObject({
 	size : 30,
 	color : '#FFFFFF'
 });
+
 game.newLoop('GameOver', function () {
 	game.clear();
 	drawBG();
 	drawGR();
+
 	brush.drawText({
 		x : width / 2,
 		y : height / 20,
@@ -231,21 +289,29 @@ game.newLoop('GameOver', function () {
 		font : 'myFont',
 		align : 'center'
 	});
+
 	pushVK.draw();
 	restart.draw();
+
 	if (mouse.isPeekObject('LEFT', restart)) {
 		game.setLoop('game');
 	}
+
 	if (mouse.isPeekObject('LEFT', pushVK)) {
 		VK.api('wall.post', {
-			'message' : 'В приложении FlappyBird я набрал очков: ' + score + '\n Попробуй и ты!',
+
+			'message' : 'В приложении  я набрал очков: ' + score + '\n Попробуй и ты:',
 			'attachments' : 'photo-44840923_456239018'
+
 		}, function (data) {
 			log('Success');
 		});
 	}
+
 });
+
 game.startLoop('menu');
+
 </script>
 </body>
 </html>
