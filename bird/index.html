@@ -201,12 +201,14 @@ var space = 80;
 
 			if (el.top.isInCamera()) {
 				if (el.top.isIntersect(bird)) {
+					aDie.play();
 					gameOver();
 				}
 			}
 
 			if (el.bottom.isInCamera()) {
 				if (el.bottom.isIntersect(bird)) {
+					aDie.play();
 					gameOver();
 				}
 			}
@@ -218,6 +220,7 @@ var space = 80;
 			}
 
 			if (bird.y + bird.h > height) {
+				aDie.play();
 				gameOver();
 			}
 
