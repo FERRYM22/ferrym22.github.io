@@ -143,11 +143,11 @@ var Menu = function () {
 		}
 	};
 };
-
+var blocks = [], oldBlock = false;
+	var space = 80;
 var Game = function () {
 
-	var blocks = [], oldBlock = false;
-	var space = 80;
+	
 
 	var addBlock = function (y) {
 
@@ -308,17 +308,6 @@ game.newLoop('GameOver', function () {
 		VK.api('wall.post', {
 
 			'message' : 'В приложении я набрал очков: ' + score + '\n Попробуй и ты!',
-			'attachments' : 'photo-44840923_456239018'
-
-		}, function (data) {
-			log('Success');
-		});
-	}
-
-	if (mouse.isPeekObject('RIGHT', pushVK)) {
-		VK.api('wall.post', {
-
-			'message' : 'Всякое бывает в жизни братан: ' + score + '\n Попробуй и ты!',
 			'attachments' : 'photo-44840923_456239018'
 
 		}, function (data) {
