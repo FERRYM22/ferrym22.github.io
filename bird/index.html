@@ -39,6 +39,7 @@ var s = pjs.vector.size;
 var brush = pjs.brush;
 var mouse = pjs.mouseControl.initMouseControl();
 var aFire = pjs.wAudio.newAudio('wing.wav');
+var aDie = pjs.wAudio.newAudio('die.wav');
 var score = 0;
 
 var bg = [], oldB;
@@ -212,6 +213,7 @@ var space = 80;
 
 
 			if (bird.y < 0) {
+				aDie.play();
 				gameOver();
 			}
 
