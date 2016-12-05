@@ -33,9 +33,9 @@ var p = pjs.vector.point;
 var s = pjs.vector.size;
 var brush = pjs.brush;
 var mouse = pjs.mouseControl.initMouseControl();
+	//var back = audio.newAudio('wing.wav', 0.9);
 	
-	
-	
+	var aFire = pjs.wAudio.newAudio('wing.wav');
 	
 	
 var score = 0;
@@ -185,7 +185,8 @@ var Game = function () {
 		bird.angle = bird.dy;
 		if (mouse.isPress('LEFT')) {
 			bird.dy = -8;
-			bump : audio.newAudio('wing.wav', 0.5) // file, volume
+			aFire.play();
+			//bump : audio.newAudio('wing.wav', 0.5) // file, volume
 		}
 		drawBlocks();
 		drawGR();
