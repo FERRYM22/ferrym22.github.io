@@ -255,11 +255,12 @@ var space = 80;
 	this.entry = function () {
 		 bird.dy = 0;
     	 blocks = [], oldBlock = false;
+    	 space = 80;
 		OOP.forInt(5, function () {
 		addBlock(pjs.math.random(space*2, height-space*2));
 	});
 		bird.setPositionC(p(width / 2, height / 2));
-		score = 10;
+		score = 0;
 	};
 };
 
