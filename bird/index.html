@@ -139,6 +139,7 @@ var Menu = function () {
 		});
 
 		if (mouse.isPress('LEFT')) {
+			aFire.play();
 			return game.setLoop('game');
 		}
 	};
@@ -303,6 +304,7 @@ game.newLoop('GameOver', function () {
 	restart.draw();
 
 	if (mouse.isPeekObject('LEFT', restart)) {
+		aFire.play();
 		game.setLoop('game');
 	}
 
