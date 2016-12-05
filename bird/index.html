@@ -227,7 +227,6 @@ var Game = function () {
 
 	this.update = function () {
 		drawBG();
-
 		bird.draw();
 		bird.dy += 0.5;
 		bird.y += bird.dy;
@@ -254,7 +253,7 @@ var Game = function () {
 	};
 
 	this.entry = function () {
-		bird.dy = 0;
+		 bird.dy = 0;
     	 blocks = [], oldBlock = false;
 		OOP.forInt(5, function () {
 		addBlock(pjs.math.random(space*2, height-space*2));
@@ -309,6 +308,17 @@ game.newLoop('GameOver', function () {
 		VK.api('wall.post', {
 
 			'message' : 'В приложении я набрал очков: ' + score + '\n Попробуй и ты!',
+			'attachments' : 'photo-44840923_456239018'
+
+		}, function (data) {
+			log('Success');
+		});
+	}
+
+	if (mouse.isPeekObject('RIGHT', pushVK)) {
+		VK.api('wall.post', {
+
+			'message' : 'Всякое бывает в жизни братан: ' + score + '\n Попробуй и ты!',
 			'attachments' : 'photo-44840923_456239018'
 
 		}, function (data) {
