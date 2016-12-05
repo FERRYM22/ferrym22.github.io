@@ -159,10 +159,10 @@ var space = 80;
 			w : width / 10,
 			angle : 180,
 			onload : function () {
-				this.y =  y - space;
+				this.y = -this.h + y - space;
 			}
 		});
-//-this.h +
+
 		var o2 = game.newImageObject({
 			file : 'block.png',
 			x : dX, y : 0,
@@ -287,7 +287,7 @@ game.newLoop('GameOver', function () {
 	game.clear();
 	drawBG();
 	drawGR();
-
+     
 	brush.drawText({
 		x : width / 2,
 		y : height / 20,
