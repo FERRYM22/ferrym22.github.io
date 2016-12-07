@@ -198,9 +198,9 @@ var space = 80;
 				el.top.x = el.bottom.x = oldBlock.top.x + oldBlock.top.w + pjs.math.random(200, 900);
 				oldBlock = el;
 				aPoint.play();
-				score += 1;
+				//score += 1;
 			}
-
+                        if (el.top.x < width/2 && el.top.x > width/2 - 2 ) { score +=1;}
 			if (el.top.isInCamera()) {
 				if (el.top.isIntersect(bird)) {
 					aDie.play();
