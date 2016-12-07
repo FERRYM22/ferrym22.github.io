@@ -154,7 +154,7 @@ var space = 80;
 
 	var addBlock = function (y) {
 
-		var dX = oldBlock ? oldBlock.top.x + pjs.math.random(200, 900) : width;
+		var dX = oldBlock ? oldBlock.top.x + 400 : width;
 
 		var o = game.newImageObject({
 			file : 'block.png',
@@ -195,7 +195,7 @@ var space = 80;
 			el.bottom.move(p(-1.5, 0));
 
 			if (el.top.x + el.top.w < 0) {
-				el.top.x = el.bottom.x = oldBlock.top.x + oldBlock.top.w + pjs.math.random(200, 900);
+				el.top.x = el.bottom.x = oldBlock.top.x + oldBlock.top.w + 400;
 				oldBlock = el;
 				aPoint.play();
 				score += 1;
