@@ -44,6 +44,9 @@ var aPoint = pjs.wAudio.newAudio('point.wav');
 var score = 0;
 var name = 'Name';
 var urlPhoto = 'foto';
+	
+
+	
 var bg = [], oldB;
 OOP.forInt(3, function (i) {
 	oldB = game.newImageObject({
@@ -121,7 +124,11 @@ VK.api('users.get',{'fields': 'photo_50'},function(data){
 };
 	
 var Menu = function () {
-
+             var Avatar = game.newImageObject({
+             file: urlPhoto,
+             x:0 , y:0
+             });
+	
 	this.update = function () {
 		drawBG();
 		bird.draw();
@@ -137,11 +144,11 @@ var Menu = function () {
 			font : 'myFont',
 			align : 'center'
 		});
-
+                Avatar.draw();
 		brush.drawText({
 			x : width / 2,
 			y : height / 4,
-			text : '' +urlPhoto,
+			text : 'Отладка',
 			size : 20,
 			color : 'white',
 			font : 'myFont',
