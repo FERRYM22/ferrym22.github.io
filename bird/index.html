@@ -309,7 +309,7 @@ game.newLoop('GameOver', function () {
 
 	pushVK.draw();
 	restart.draw();
-        var rchislo = pjs.math.random(0, 3);
+        
 	if (mouse.isPeekObject('LEFT', restart)) {
 		aFire.play();
 		game.setLoop('game');
@@ -317,17 +317,6 @@ game.newLoop('GameOver', function () {
          //**************
 	
 	
-	if (rchislo == 2) {
-	VK.api('wall.post', {
-
-			'message' : 'В приложении я набрал очков: ' + score + '\n Попробуй и ты!',
-			'attachments' : 'photo-44840923_456239018'
-
-		}, function (data) {
-			log('Success');
-		});
-	
-	}
 	
 	if (mouse.isPeekObject('LEFT', pushVK)) {
 		VK.api('wall.post', {
