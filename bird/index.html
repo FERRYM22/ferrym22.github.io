@@ -123,11 +123,13 @@ VK.api('users.get',{'fields': 'photo_50'},function(data){
 });
 };
 	
-var Menu = function () {
-             var Avatar = game.newImageObject({
+var Avatar = game.newImageObject({
              file: ''+urlPhoto+'',
              x:0 , y:0
              });
+	
+var Menu = function () {
+             
 	
 	this.update = function () {
 		drawBG();
