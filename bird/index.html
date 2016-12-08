@@ -309,7 +309,7 @@ game.newLoop('GameOver', function () {
 
 	pushVK.draw();
 	restart.draw();
-
+        var rchislo = pjs.math.random(0, 3);
 	if (mouse.isPeekObject('LEFT', restart)) {
 		aFire.play();
 		game.setLoop('game');
