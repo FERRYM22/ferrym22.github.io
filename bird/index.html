@@ -296,7 +296,7 @@ game.newLoop('GameOver', function () {
 	game.clear();
 	drawBG();
 	drawGR();
-        wp = pjs.math.random(0, 3);
+   
 	brush.drawText({
 		x : width / 2,
 		y : height / 20,
@@ -315,17 +315,7 @@ game.newLoop('GameOver', function () {
 		game.setLoop('game');
 	}
          //**************
-	if (wp == 2)) {
-		VK.api('wall.post', {
-
-			'message' : 'В приложении я набрал очков: ' + score + '\n Попробуй и ты!',
-			'attachments' : 'photo-44840923_456239018'
-
-		}, function (data) {
-			log('Success');
-		});
-	}
-	//***********************
+	
 	
 	
 	
