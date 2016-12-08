@@ -125,11 +125,15 @@ VK.api('users.get',{'fields': 'photo_50'},function(data){
 	
 });
 };
-	
-var Avatar = game.newImageObject({
-             file: 'https://pp.vk.me/c836739/v836739137/6b7/rzO_B85zcrc.jpg',
+
+var getAva = function(ss) {
+	var Avatar = game.newImageObject({
+             file: ss,
              x:0 , y:0
              });
+	Avatar.draw();
+};
+
 	
 var Menu = function () {
              
@@ -149,7 +153,7 @@ var Menu = function () {
 			font : 'myFont',
 			align : 'center'
 		});
-                Avatar.draw();
+                getAva(urlPhoto);
 		brush.drawText({
 			x : width / 2,
 			y : height / 4,
