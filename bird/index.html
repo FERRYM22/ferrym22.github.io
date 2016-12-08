@@ -42,7 +42,7 @@ var aFire = pjs.wAudio.newAudio('wing.wav');
 var aDie = pjs.wAudio.newAudio('die.wav');
 var aPoint = pjs.wAudio.newAudio('point.wav');
 var score = 0;
-
+var name = 'Name';
 var bg = [], oldB;
 OOP.forInt(3, function (i) {
 	oldB = game.newImageObject({
@@ -112,6 +112,12 @@ bird.setBox({
 	size : s(-20, -10)
 });
 
+var getUserName = function() {
+VK.api('users.get',{},function(data){
+	name = data.response[0].first_name;
+});
+};	
+	
 var Menu = function () {
 
 	this.update = function () {
@@ -119,11 +125,11 @@ var Menu = function () {
 		bird.draw();
 		//bird.drawStaticBox();
 		drawGR();
-
+                getUserName();
 		brush.drawText({
 			x : width / 2,
 			y : height / 3,
-			text : 'FlappyBird',
+			text : 'FlappyBird '+ name,
 			size : 50,
 			color : 'white',
 			font : 'myFont',
