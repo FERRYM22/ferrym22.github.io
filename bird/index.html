@@ -147,13 +147,15 @@ VK.api('storage.get',{key: 'rec'}, function(data) {
 record = data.response;
 });
 };
-
 var getFriend = function() {
-	VK.api("friends.get", {}, function(dataAllFriends) {
-     	// узнаем количество друзей
-        var frCount = dataAllFriends.response.length;
-	});
-	console.log('good '+frCount[0]);
+VK.api("friends.get", {}, function(dataAllFriends) {
+var arrFriend = [];
+for (var i = 0; i <= 2; i++) {
+	arrFriend[i] = dataAllFriends.response[i];
+	console.log(arrFriend[i]);
+};
+
+});
 };
 // get VK API	
 
