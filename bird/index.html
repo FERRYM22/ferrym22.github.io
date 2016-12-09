@@ -131,11 +131,18 @@ bird.setBox({
 	offset : p(10, 5),
 	size : s(-20, -10)
 });
-
+	
+var getRecord = function() {
+VK.api('storage.get',{ key: 'record'},function(data){
+	record = data.response[0].key;
+});
+};
+	
 var getUserName = function() {
 VK.api('users.get',{'fields': 'photo_50'},function(data){
 	name = data.response[0].first_name;
 	urlPhoto = data.response[0].photo_50;
+	
 });
 };
 
@@ -263,12 +270,15 @@ var space = 80;
 
 			if (bird.y < 0) {
 				aDie.play();
+				getRecord();
 				gameOver();
 			}
 
 			if (bird.y + bird.h > height) {
 				aDie.play();	
 				printWall();
+				setRecord(score);
+				getRecord();
 				gameOver();
 			}
 
@@ -342,11 +352,11 @@ game.newLoop('GameOver', function () {
 	game.clear();
 	drawBG();
 	drawGR();
-        setRecord(score);
+       // setRecord(score);
 	brush.drawText({
 		x : width / 2,
 		y : height / 20,
-		text : 'Ваш результат  ' + score,
+		text : 'Ваш результат  ' + score +'Рекорд '+record,
 		size : 50,
 		color : 'white',
 		font : 'myFont',
