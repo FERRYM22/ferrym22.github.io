@@ -149,7 +149,7 @@ record = data.response;
 };
 var getFriend = function() {
 VK.api("friends.get", {}, function(dataAllFriends) {
-var arrFriend = dataAllFriends.response[0].user_id;
+var arrFriend = dataAllFriends.response.count;
 	console.log(arrFriend);
 });
 };
