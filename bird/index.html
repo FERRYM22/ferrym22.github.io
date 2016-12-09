@@ -133,7 +133,7 @@ bird.setBox({
 });
 	
 var getRecord = function() {
-VK.api('storage.get',{ key: 'record'},function(data){
+VK.api('storage.get',{user_id, key: 'record'},function(data){
 	record = data.response[0].key;
 });
 };
