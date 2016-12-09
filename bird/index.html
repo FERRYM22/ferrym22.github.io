@@ -147,10 +147,11 @@ VK.api('storage.get',{key: 'rec'}, function(data) {
 record = data.response;
 });
 };
+var drugov = 0;	
 var getFriend = function() {
 VK.api("friends.get", {}, function(dataAllFriends) {
-var arrFriend = dataAllFriends.response.count;
-	console.log(arrFriend);
+var drugov = dataAllFriends.response.count;
+	console.log('ok');
 });
 };
 // get VK API	
@@ -169,7 +170,7 @@ var Menu = function () {
 		brush.drawText({
 			x : width / 2,
 			y : height / 3,
-			text : 'FlappyBird',
+			text : 'FlappyBird '+drugov,
 			size : 20,
 			color : 'white',
 			font : 'myFont',
