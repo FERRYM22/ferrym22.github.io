@@ -153,9 +153,10 @@ var getFriend = function() {
 	VK.api("friends.getAppUsers", {}, function(dataAppUsers) {
 //VK.api("friends.get", {}, function(dataAllFriends) {
 //drugov = dataAppUsers.response.count;
-drugov = dataAppUsers.response;	
+		drugov = dataAppUsers.response.join(",");
+//drugov = dataAppUsers.response;	
 	
-	console.log(dataAppUsers.response[0]);
+	//console.log(dataAppUsers.response[0]);
 });
 };
 // get VK API	
@@ -174,7 +175,7 @@ var Menu = function () {
 		brush.drawText({
 			x : width / 2,
 			y : height / 3,
-			text : 'FlappyBird '+ kol,
+			text : drugov,
 			size : 20,
 			color : 'white',
 			font : 'myFont',
