@@ -153,7 +153,8 @@ var getFriend = function() {
 	VK.api("friends.getAppUsers", {}, function(dataAppUsers) {
 //VK.api("friends.get", {}, function(dataAllFriends) {
 //drugov = dataAppUsers.response.count;
-drugov = dataAppUsers.response.join(',');
+//drugov = dataAppUsers.response.join(',');
+document.getElementById('uids').value = data.response.join(",");
 //drugov = dataAppUsers.response;	
 	
 	//console.log(dataAppUsers.response[0]);
