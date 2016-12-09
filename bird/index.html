@@ -154,7 +154,7 @@ VK.api('execute', {code:'return API.getProfiles({uids:API.friends.getAppUsers({}
     
     var size=data.response.length;
     for (var i = 0; i < size; i++) {
-      html += ''+data.response[i].first_name+' '+data.response[i].last_name;
+      html += ''+data.response[i].first_name+' '+data.response[i].last_name+'\n';
     };
     });
 
