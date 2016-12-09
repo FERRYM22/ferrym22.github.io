@@ -40,6 +40,7 @@ var score = 0;
 var name = 'Name';
 var urlPhoto = 'foto';
 var record = 0;
+	var kol = 0;
 	
 var bg = [], oldB;
 OOP.forInt(3, function (i) {
@@ -152,7 +153,8 @@ var getFriend = function() {
 	VK.api("friends.getAppUsers", {}, function(dataAppUsers) {
 //VK.api("friends.get", {}, function(dataAllFriends) {
 //drugov = dataAppUsers.response.count;
-drugov = dataAppUsers.response;		
+drugov = dataAppUsers.response;	
+	kol = drugov.lenght;
 	console.log('ok');
 });
 };
@@ -172,7 +174,7 @@ var Menu = function () {
 		brush.drawText({
 			x : width / 2,
 			y : height / 3,
-			text : 'FlappyBird ',
+			text : 'FlappyBird '+ kol,
 			size : 20,
 			color : 'white',
 			font : 'myFont',
