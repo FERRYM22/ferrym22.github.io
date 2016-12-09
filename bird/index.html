@@ -141,14 +141,14 @@ var getAva = function(ss) {
 
 	
 var Menu = function () {
-             
+             getUserName();
 	
 	this.update = function () {
 		drawBG();
 		bird.draw();
 		//bird.drawStaticBox();
 		drawGR();
-                getUserName();
+              //  getUserName();
 		brush.drawText({
 			x : width / 2,
 			y : height / 3,
