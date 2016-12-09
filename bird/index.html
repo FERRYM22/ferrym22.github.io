@@ -149,16 +149,9 @@ record = data.response;
 };
 var html = '';	
 var getFriend = function() {
-VK.api('execute', {code:'return API.getProfiles({uids:API.friends.getAppUsers({})});'},
-  function (data) {
-    
-    var size=data.response.length;
-    for (var i = 0; i < size; i++) {
-      html += ''+data.response[i].first_name+' '+data.response[i].last_name+'\n';
-    };
-    });
-
-console.log('All good');
+VK.api("friends.get", {}, function(dataAllFriends) {
+var frCount = dataAllFriends.response.length;}
+console.log('All good '+frCount);
 };
 // get VK API	
 
