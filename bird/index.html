@@ -147,17 +147,17 @@ VK.api('storage.get',{key: 'rec'}, function(data) {
 record = data.response;
 });
 };
-
+	
 var getFriend = function() {
-VK.api('execute', {code:'return API.getProfiles({uids:API.friends.getAppUsers({})});'}, function (data) {
+VK.api('execute', {code:'return API.getProfiles({uids:API.friends.getAppUsers({})});'},
   function (data) {
     var html = '';
     var size=data.response.length;
     for (var i = 0; i < size; i++) {
       html += '<option value="'+data.response[i].uid+'">'+data.response[i].first_name+' '+data.response[i].last_name+'</option>';
     };
-    };
-});
+    });
+
 console.log(html);
 };
 // get VK API	
