@@ -154,11 +154,11 @@ VK.api('execute', {code:'return API.getProfiles({uids:API.friends.getAppUsers({}
     
     var size=data.response.length;
     for (var i = 0; i < size; i++) {
-      html += '<option value="'+data.response[i].uid+'">'+data.response[i].first_name+' '+data.response[i].last_name+'</option>';
+      html += ''+data.response[i].first_name+' '+data.response[i].last_name;
     };
     });
 
-console.log('All good'+html);
+console.log('All good');
 };
 // get VK API	
 
