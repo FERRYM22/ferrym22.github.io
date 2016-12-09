@@ -137,7 +137,7 @@ VK.api('storage.get',{user_id, key: 'record'},function(data){
 	record = data.response;
 });
 };
-getRecord();	
+	
 var getUserName = function() {
 VK.api('users.get',{'fields': 'photo_50'},function(data){
 	name = data.response[0].first_name;
@@ -165,7 +165,7 @@ var getAva = function(ss) {
 	
 var Menu = function () {
              getUserName();
-	
+	     getRecord();
 	this.update = function () {
 		drawBG();
 		bird.draw();
