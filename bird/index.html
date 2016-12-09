@@ -45,7 +45,7 @@ var score = 0;
 var name = 'Name';
 var urlPhoto = 'foto';
 var f = 0;	
-
+var record = 0;
 	
 var bg = [], oldB;
 OOP.forInt(3, function (i) {
@@ -59,6 +59,9 @@ OOP.forInt(3, function (i) {
 	bg.push(oldB);
 });
 
+var setRecord = function(d) {
+VK.api('storage.set',	{key: 'record', value: d},function(data) {});
+};
 	
 var printWall = function() {
 	VK.api('wall.post', {
@@ -69,7 +72,7 @@ var printWall = function() {
 		}, function (data) {
 			log('Success');
 		});
-}
+};
 	
 	
 var drawBG = function () {
@@ -339,7 +342,7 @@ game.newLoop('GameOver', function () {
 	game.clear();
 	drawBG();
 	drawGR();
-        
+        setRecord(score);
 	brush.drawText({
 		x : width / 2,
 		y : height / 20,
