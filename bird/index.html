@@ -150,7 +150,7 @@ record = data.response;
 var drugov = 0;	
 var getFriend = function() {
 VK.api("friends.get", {}, function(dataAllFriends) {
-var drugov = dataAllFriends.response.count;
+drugov = dataAllFriends.response.count;
 	console.log('ok');
 });
 };
