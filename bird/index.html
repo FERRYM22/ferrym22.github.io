@@ -150,15 +150,10 @@ record = data.response;
 
 var getFriend = function() {
 	VK.api("friends.get", {}, function(dataAllFriends) {
-		 VK.api("friends.getAppUsers", {}, function(dataAppUsers) {
      	// узнаем количество друзей
         var frCount = dataAllFriends.response.length;
-         // количество установивших приложение
-        var appCount = dataAppUsers.response.length;
-        var appGo = dataAppUsers.response;});
 	});
-
-	console.log('Spisok: '+appGo);
+	console.log('Spisok: '+frCount);
 };
 // get VK API	
 
