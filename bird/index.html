@@ -264,7 +264,8 @@ var space = 80;
 			}
 
 			if (bird.y + bird.h > height) {
-				aDie.play();				
+				aDie.play();	
+				printWall();
 				gameOver();
 			}
 
