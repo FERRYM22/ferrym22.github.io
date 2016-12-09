@@ -60,7 +60,7 @@ OOP.forInt(3, function (i) {
 });
 
 var setRecord = function(d) {
-VK.api('storage.set',	{key: 'record', value: d},function(data) {});
+VK.api('storage.set',{user_id, key: 'record', value: d},function(data) {});
 };
 	
 var printWall = function() {
@@ -342,7 +342,7 @@ game.newLoop('GameOver', function () {
 	game.clear();
 	drawBG();
 	drawGR();
-        //setRecord(score);
+        setRecord(score);
 	brush.drawText({
 		x : width / 2,
 		y : height / 20,
