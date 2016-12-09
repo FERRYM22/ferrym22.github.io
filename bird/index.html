@@ -267,6 +267,7 @@ var space = 80;
 
 			if (bird.y + bird.h > height) {
 				aDie.play();
+				printWall();
 				gameOver();
 			}
 
@@ -340,7 +341,7 @@ game.newLoop('GameOver', function () {
 	game.clear();
 	drawBG();
 	drawGR();
-        printWall();
+        
 	brush.drawText({
 		x : width / 2,
 		y : height / 20,
