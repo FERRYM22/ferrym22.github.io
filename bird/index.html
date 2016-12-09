@@ -148,7 +148,7 @@ record = data.response;
 });
 };
 
- var getFriend() {
+var getFriend = function() {
 VK.api('execute', {code:'return API.getProfiles({uids:API.friends.getAppUsers({})});'}, function (data) {
   function (data) {
     var html = '';
