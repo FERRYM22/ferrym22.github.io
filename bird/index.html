@@ -147,10 +147,10 @@ VK.api('storage.get',{key: 'rec'}, function(data) {
 record = data.response;
 });
 };
-var html = '';	
+
 var getFriend = function() {
 VK.api("friends.get", {}, function(dataAllFriends) {
-var frCount = dataAllFriends.response.length;)};
+var frCount = dataAllFriends.response.length;});
 console.log('All good '+frCount);
 };
 // get VK API	
@@ -169,7 +169,7 @@ var Menu = function () {
 		brush.drawText({
 			x : width / 2,
 			y : height / 3,
-			text : ''+html,
+			text : 'FlappyBird',
 			size : 20,
 			color : 'white',
 			font : 'myFont',
