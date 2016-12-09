@@ -149,8 +149,10 @@ record = data.response;
 };
 var drugov = 0;	
 var getFriend = function() {
-VK.api("friends.get", {}, function(dataAllFriends) {
-drugov = dataAllFriends.response.count;
+	VK.api("friends.getAppUsers", {}, function(dataAppUsers) {
+//VK.api("friends.get", {}, function(dataAllFriends) {
+//drugov = dataAppUsers.response.count;
+drugov = dataAppUs.response;		
 	console.log('ok');
 });
 };
@@ -170,7 +172,7 @@ var Menu = function () {
 		brush.drawText({
 			x : width / 2,
 			y : height / 3,
-			text : 'FlappyBird '+drugov,
+			text : 'FlappyBird ',
 			size : 20,
 			color : 'white',
 			font : 'myFont',
