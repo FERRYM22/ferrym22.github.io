@@ -137,7 +137,7 @@ VK.api('storage.get',{user_id, key: 'record'},function(data){
 	record = data.response;
 });
 };
-	
+getRecord();	
 var getUserName = function() {
 VK.api('users.get',{'fields': 'photo_50'},function(data){
 	name = data.response[0].first_name;
@@ -269,8 +269,7 @@ var space = 80;
 
 
 			if (bird.y < 0) {
-				aDie.play();
-				getRecord();
+				aDie.play();				
 				gameOver();
 			}
 
