@@ -3,7 +3,7 @@ var pjs = new PointJS('2D', width, height);
 
 var vk_inited = false;
 VK.init(function() {
-	vk_inited = true;
+	vk_inited = true; 
 }, function() {
 }, '5.60');
 
