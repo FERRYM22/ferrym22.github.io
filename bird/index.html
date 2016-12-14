@@ -148,18 +148,7 @@ VK.api('storage.get',{key: 'rec'}, function(data) {
 record = data.response;
 });
 };
-var drugov = 0;	
-	
-var getFriend = function() {
-VK.api("friends.get", {fields: 'photo_50'}, function(data) {
-var friend = [];
-for (i = 0; i < 7; i++) {
-friend[i] = data.response[i].photo_50;
-}
-});
-drugov = friend[1];
-console.log(drugov);
-};
+
 // get VK API	
 
 
@@ -167,7 +156,7 @@ var Menu = function () {
     getUserName();
 	//setRecord(5);  
 	//getRecord(); 
-	 getFriend();
+	
 	this.update = function () {
 		drawBG();
 		bird.draw();
@@ -176,7 +165,7 @@ var Menu = function () {
 		brush.drawText({
 			x : width / 2,
 			y : height / 3,
-			text : 'tss',
+			text : 'FlappyBird',
 			size : 20,
 			color : 'white',
 			font : 'myFont',
