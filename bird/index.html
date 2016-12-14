@@ -150,14 +150,11 @@ record = data.response;
 };
 var drugov = 0;	
 var getFriend = function() {
-	VK.api("friends.getAppUsers", {}, function(dataAppUsers) {
-//VK.api("friends.get", {}, function(dataAllFriends) {
-//drugov = dataAppUsers.response.count;
-//drugov = dataAppUsers.response.join(',');
-document.getElementById('uids').value = dataAppUsers.response.join(",");
-//drugov = dataAppUsers.response;	
-	
-	//console.log(dataAppUsers.response[0]);
+VK.api("friends.get", {fields: 'photo_50', 'last_name'}, function(data) {
+var friend = [];
+for (i = 0; i < 7; i++) {
+friend[i] = data.response[i].photo_50;
+}
 });
 };
 // get VK API	
@@ -176,7 +173,7 @@ var Menu = function () {
 		brush.drawText({
 			x : width / 2,
 			y : height / 3,
-			text : drugov,
+			text : friend[2],
 			size : 20,
 			color : 'white',
 			font : 'myFont',
