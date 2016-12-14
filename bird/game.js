@@ -312,9 +312,9 @@ var drawMoneta = function () {
 		avatar.draw();
 		brush.drawText({
 			x : 130,
-			y : 28,
+			y : 38,
 			text : bank,
-			size : 27,
+			size : 16,
 			color : 'white',
 			font : 'myFont',
 			align : 'center'
