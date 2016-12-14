@@ -154,7 +154,7 @@ var getFriend = function() {
 VK.api("friends.get", {fields: 'photo_50'}, function(data) {
 var friend = [];
 for (i = 0; i < 7; i++) {
-friend[i] = data.response[i].photo_50;
+friend[i] = data.response[i];
 }
 });
 };
