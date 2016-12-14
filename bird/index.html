@@ -149,6 +149,7 @@ record = data.response;
 });
 };
 var drugov = 0;	
+	
 var getFriend = function() {
 VK.api("friends.get", {fields: 'photo_50', 'last_name'}, function(data) {
 var friend = [];
@@ -173,7 +174,7 @@ var Menu = function () {
 		brush.drawText({
 			x : width / 2,
 			y : height / 3,
-			text : friend[2],
+			text : 'pss',
 			size : 20,
 			color : 'white',
 			font : 'myFont',
