@@ -286,6 +286,7 @@ var drawMoneta = function () {
 		bird.y += bird.dy;
 		bird.angle = bird.dy;
 		if (mouse.isPress('LEFT')) {
+			aFire.play();
 			bird.dy = -8;
 		}
 		
