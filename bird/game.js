@@ -29,7 +29,13 @@ var aPoint = pjs.wAudio.newAudio('point.wav');
 
 var coin = game.newImageObject({
 file: 'coin.png',
-x: 60, y: 20,
+x: 80, y: 30,
+scale: 0.7,
+});
+
+var avatar = game.newImageObject({
+file: 'ava.png',
+x: 5, y: 5,
 });
 
 OOP.forInt(3, function (i) {
@@ -211,6 +217,14 @@ var Game = function () {
 			
 			el.top.move(p(-1.5, 0));
 			el.bottom.move(p(-1.5, 0));
+			el.top.setBox({
+			offset : p(30, 5),
+			size : s(-50, -10)
+			});
+			el.bottom.setBox({
+			offset : p(30, 5),
+			size : s(-50, -10)
+			});
 			
 			if (el.top.x + el.top.w < 0) {
 				el.top.x = el.bottom.x = oldBlock.top.x + oldBlock.top.w + pjs.math.random(200, 900);
@@ -295,6 +309,7 @@ var drawMoneta = function () {
 		drawBlocks();
 		drawGR();
 		coin.draw();
+		avatar.draw();
 		brush.drawText({
 			x : 130,
 			y : 28,
