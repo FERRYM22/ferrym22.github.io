@@ -399,8 +399,8 @@ game.newLoop('GameOver', function () {
 
 	if (mouse.isPeekObject('LEFT', vk)) {
 		VK.api('wall.post', {
-			'message' : 'В приложении FlappyDevil я набрал очков: ' + score + '\n Попробуй и ты: https://vk.com/app5728305',
-			'attachments' : 'photo-44840923_456239018'
+			'message' : 'В приложении FlappyDevil я набрал очков: ' + score + '\n Попробуй и ты: https://vk.com/app5760810',
+			'attachments' : 'photo-134923772_456239017'
 		}, function (data) {
 			log('Success');
 		});
