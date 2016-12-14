@@ -101,7 +101,7 @@ var goPlay = game.newImageObject({
     });
 
 var mainMenu = game.newImageObject({
-      file : 'mainMenu.png',
+      file : 'mainmenu.png',
       x: 163, y: 363,
       //scale : 0.4
     });
