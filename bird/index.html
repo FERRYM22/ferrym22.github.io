@@ -151,10 +151,10 @@ record = data.response;
 var drugov = 0;	
 	
 var getFriend = function() {
-VK.api("friends.get", {fields: 'photo_50, last_name'}, function(data) {
+VK.api("friends.get", {fields: 'photo_50'}, function(data) {
 var friend = [];
 for (i = 0; i < 7; i++) {
-friend[i] = data.response[i].last_name;
+friend[i] = data.response[i].photo_50;
 }
 });
 };
