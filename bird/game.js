@@ -262,6 +262,7 @@ var drawMoneta = function () {
 			
 			if (el.mon.isInCamera()) {
 				if (el.mon.isIntersect(bird) ) {
+					aPoint.play();
 					el.mon.x = -300;					
 					bank+=1;
 				}
