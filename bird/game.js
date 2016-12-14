@@ -1,6 +1,12 @@
 var width = 640, height = 480;
 var pjs = new PointJS('2D', width, height);
 
+var vk_inited = false;
+VK.init(function() {
+	vk_inited = true;
+}, function() {
+}, '5.60');
+
 var log = pjs.system.log;
 var game = pjs.game;
 var camera = pjs.camera;
