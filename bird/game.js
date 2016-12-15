@@ -26,6 +26,8 @@ var bg = [], oldB;
 var aFire = pjs.wAudio.newAudio('wing.wav');
 var aDie = pjs.wAudio.newAudio('die.wav');
 var aPoint = pjs.wAudio.newAudio('point.wav');
+var name = 'Name';
+var urlPhoto = 'foto';
 
 var coin = game.newImageObject({
 file: 'coin.png',
@@ -133,8 +135,7 @@ var proba = game.newImageObject({
     });
 
 var Menu = function () {
-	var name = '2';
-	name = user.getName();
+	getUserName();
 	this.update = function () {
 		drawBG();
 		bird.draw();
@@ -311,6 +312,7 @@ var drawMoneta = function () {
 		drawBlocks();
 		drawGR();
 		coin.draw();
+		getAva(urlPhoto);
 		avatar.draw();
 		brush.drawText({
 			x : 130,
