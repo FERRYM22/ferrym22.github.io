@@ -114,7 +114,7 @@ VK.api('users.get',{'fields': 'photo_50'},function(data){
 var getAva = function(ss) {
 	var Avatar = game.newImageObject({
              file: ss,
-             x:15 , y:15
+             x:16 , y:16
              });
 	Avatar.draw();
 	brush.drawText({
