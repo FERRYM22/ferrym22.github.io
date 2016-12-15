@@ -114,12 +114,12 @@ VK.api('users.get',{'fields': 'photo_50'},function(data){
 var getAva = function(ss) {
 	var Avatar = game.newImageObject({
              file: ss,
-             x:10 , y:10
+             x:15 , y:15
              });
 	Avatar.draw();
 	brush.drawText({
 			x : 80,
-			y : 5,
+			y : 10,
 			text : name,
 			size : 20,
 			color : 'white',
