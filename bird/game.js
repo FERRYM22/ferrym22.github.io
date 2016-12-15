@@ -133,7 +133,8 @@ var proba = game.newImageObject({
     });
 
 var Menu = function () {
-	
+	var name = '2';
+	name = user.getName();
 	this.update = function () {
 		drawBG();
 		bird.draw();
@@ -142,7 +143,7 @@ var Menu = function () {
 		brush.drawText({
 			x : width / 2,
 			y : height / 4,
-			text : 'FlappyDevil',
+			text : 'FlappyDevil '+name,
 			size : 50,
 			color : 'white',
 			font : 'myFont',
