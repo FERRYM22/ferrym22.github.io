@@ -1,6 +1,6 @@
 
 var user = {
-	name:'',
+	name:'3',
 	getName: function()
 	{
        VK.api('users.get',{'fields': 'photo_50,first_name'},function(data){
